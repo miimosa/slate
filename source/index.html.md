@@ -182,7 +182,7 @@ func main() {
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|lead created !|None|
+|201|[Created](https://tools.ietf.org/html/rfc7231#section-6.3.2)|lead created|None|
 |422|[Unprocessable Entity](https://tools.ietf.org/html/rfc2518#section-10.3)|invalid request|None|
 
 <aside class="success">
