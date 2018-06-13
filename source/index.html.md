@@ -290,3 +290,18 @@ func main() {
 This operation does not require authentication
 </aside>
 
+# Schemas
+
+<h2 id="tocSoverview">overview</h2>
+
+<a id="schemaoverview"></a>
+
+```json
+null
+
+```
+
+### Properties
+
+*None*
+
