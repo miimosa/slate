@@ -286,6 +286,7 @@ func main() {
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|lead created|None|
+|400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|invalid record|None|
 
 <aside class="success">
 This operation does not require authentication
