@@ -21,6 +21,8 @@ headingLevel: 2
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
+MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as GET, POST, PATCH and DELETE and return appropriate HTTP response codes (2xx for success, 4xx for client errors and 5xx for server errors).<br><br>We use JSON to encode all resources
+
 # Authentication
 
 * API Key (apiKey)
@@ -289,19 +291,4 @@ func main() {
 <aside class="success">
 This operation does not require authentication
 </aside>
-
-# Schemas
-
-<h2 id="tocSoverview">overview</h2>
-
-<a id="schemaoverview"></a>
-
-```json
-null
-
-```
-
-### Properties
-
-*None*
 
