@@ -21,7 +21,7 @@ headingLevel: 2
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
-MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as GET, POST, PATCH and DELETE and return appropriate HTTP response codes (2xx for success, 4xx for client errors and 5xx for server errors).<br><br>We use JSON to encode all resources</p><h1 id="test">Test</h1><p>Du texte</p><p>
+MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as GET, POST, PATCH and DELETE and return appropriate HTTP response codes (2xx for success, 4xx for client errors and 5xx for server errors).<br><br>We use JSON to encode all resources</p><h1 id="pagination">Pagination</h1><p>We paginate in our headers, not in our response body. This follows the proposed <a href="http://tools.ietf.org/html/rfc5988" rel="nofollow">RFC-5988</a> standard for Web linking.</p><p>
 
 # Authentication
 
