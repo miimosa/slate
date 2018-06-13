@@ -21,34 +21,43 @@ headingLevel: 2
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
+# Authentication
+
+* API Key (apiKey)
+    - Parameter Name: **Authorization**, in: header. 
+
 <h1 id="MiiMOSA-API-Leads">Leads</h1>
 
-## post__api_v1_leads
+## post__api_leads
 
 > Code samples
 
 ```shell
 # You can also use wget
-curl -X POST ///api/v1/leads \
-  -H 'Content-Type: application/json'
+curl -X POST ///api/leads \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: string'
 
 ```
 
 ```http
-POST ///api/v1/leads HTTP/1.1
+POST ///api/leads HTTP/1.1
 Host: null
 Content-Type: application/json
+
+Authorization: string
 
 ```
 
 ```javascript
 var headers = {
-  'Content-Type':'application/json'
+  'Content-Type':'application/json',
+  'Authorization':'string'
 
 };
 
 $.ajax({
-  url: '///api/v1/leads',
+  url: '///api/leads',
   method: 'post',
 
   headers: headers,
@@ -63,14 +72,44 @@ $.ajax({
 const request = require('node-fetch');
 const inputBody = '{
   "firstname": "string",
-  "lastname": "string"
+  "lastname": "string",
+  "birthdate": "string",
+  "email": "string",
+  "siret": "string",
+  "phone": "string",
+  "post_code": "string",
+  "city": "string",
+  "project_name": "string",
+  "project_description": "string",
+  "social_link": "string",
+  "project_total_budget": "string",
+  "project_crowdfunding_budget": "string",
+  "project_loan_budget": "string",
+  "project_input_budget": "string",
+  "department": "string",
+  "type": "string",
+  "category": "string",
+  "financial_type": "string",
+  "user_id": "string",
+  "status": "string",
+  "estimated_publication_at": "string",
+  "partner_id": "string",
+  "custom_fields": "string",
+  "category_id": "string",
+  "turnover": "string",
+  "project_id": "string",
+  "team_user_id": "string",
+  "collect_type": "string",
+  "publication_timeframe": "string",
+  "lead_source": "string"
 }';
 const headers = {
-  'Content-Type':'application/json'
+  'Content-Type':'application/json',
+  'Authorization':'string'
 
 };
 
-fetch('///api/v1/leads',
+fetch('///api/leads',
 {
   method: 'POST',
   body: inputBody,
@@ -89,10 +128,11 @@ require 'rest-client'
 require 'json'
 
 headers = {
-  'Content-Type' => 'application/json'
+  'Content-Type' => 'application/json',
+  'Authorization' => 'string'
 }
 
-result = RestClient.post '///api/v1/leads',
+result = RestClient.post '///api/leads',
   params: {
   }, headers: headers
 
@@ -103,10 +143,11 @@ p JSON.parse(result)
 ```python
 import requests
 headers = {
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
+  'Authorization': 'string'
 }
 
-r = requests.post('///api/v1/leads', params={
+r = requests.post('///api/leads', params={
 
 }, headers = headers)
 
@@ -115,7 +156,7 @@ print r.json()
 ```
 
 ```java
-URL obj = new URL("///api/v1/leads");
+URL obj = new URL("///api/leads");
 HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 con.setRequestMethod("POST");
 int responseCode = con.getResponseCode();
@@ -143,11 +184,12 @@ func main() {
 
     headers := map[string][]string{
         "Content-Type": []string{"application/json"},
+        "Authorization": []string{"string"},
         
     }
 
     data := bytes.NewBuffer([]byte{jsonReq})
-    req, err := http.NewRequest("POST", "///api/v1/leads", data)
+    req, err := http.NewRequest("POST", "///api/leads", data)
     req.Header = headers
 
     client := &http.Client{}
@@ -157,7 +199,7 @@ func main() {
 
 ```
 
-`POST /api/v1/leads`
+`POST /api/leads`
 
 *Creates a lead*
 
@@ -166,19 +208,78 @@ func main() {
 ```json
 {
   "firstname": "string",
-  "lastname": "string"
+  "lastname": "string",
+  "birthdate": "string",
+  "email": "string",
+  "siret": "string",
+  "phone": "string",
+  "post_code": "string",
+  "city": "string",
+  "project_name": "string",
+  "project_description": "string",
+  "social_link": "string",
+  "project_total_budget": "string",
+  "project_crowdfunding_budget": "string",
+  "project_loan_budget": "string",
+  "project_input_budget": "string",
+  "department": "string",
+  "type": "string",
+  "category": "string",
+  "financial_type": "string",
+  "user_id": "string",
+  "status": "string",
+  "estimated_publication_at": "string",
+  "partner_id": "string",
+  "custom_fields": "string",
+  "category_id": "string",
+  "turnover": "string",
+  "project_id": "string",
+  "team_user_id": "string",
+  "collect_type": "string",
+  "publication_timeframe": "string",
+  "lead_source": "string"
 }
 ```
 
-<h3 id="post__api_v1_leads-parameters">Parameters</h3>
+<h3 id="post__api_leads-parameters">Parameters</h3>
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|Authorization|header|string|true|Client API key|
 |body|body|object|false|none|
 |» firstname|body|string|true|none|
 |» lastname|body|string|true|none|
+|» birthdate|body|string|false|none|
+|» email|body|string|true|none|
+|» siret|body|string|false|none|
+|» phone|body|string|true|none|
+|» post_code|body|string|false|none|
+|» city|body|string|false|none|
+|» project_name|body|string|false|none|
+|» project_description|body|string|true|none|
+|» social_link|body|string|false|none|
+|» project_total_budget|body|string|true|none|
+|» project_crowdfunding_budget|body|string|false|none|
+|» project_loan_budget|body|string|false|none|
+|» project_input_budget|body|string|false|none|
+|» department|body|string|false|none|
+|» type|body|string|false|none|
+|» category|body|string|false|none|
+|» financial_type|body|string|false|none|
+|» user_id|body|string|false|none|
+|» status|body|string|false|none|
+|» estimated_publication_at|body|string|false|none|
+|» partner_id|body|string|false|none|
+|» custom_fields|body|string|false|none|
+|» category_id|body|string|false|none|
+|» turnover|body|string|false|none|
+|» project_id|body|string|false|none|
+|» team_user_id|body|string|false|none|
+|» collect_type|body|string|true|none|
+|» publication_timeframe|body|string|true|none|
+|» lead_source|body|string|false|none|
 
-<h3 id="post__api_v1_leads-responses">Responses</h3>
+<h3 id="post__api_leads-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
