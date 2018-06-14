@@ -37,18 +37,20 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 
 ```json
 {
+  "email": "string",
   "firstname": "string",
   "lastname": "string",
-  "birthdate": "string",
-  "email": "string",
-  "siret": "string",
   "phone": "string",
+  "collect_type": "string",
+  "project_description": "string",
+  "project_total_budget": "string",
+  "publication_timeframe": "string",
+  "birthdate": "string",
+  "siret": "string",
   "post_code": "string",
   "city": "string",
   "project_name": "string",
-  "project_description": "string",
   "social_link": "string",
-  "project_total_budget": "string",
   "project_crowdfunding_budget": "string",
   "project_loan_budget": "string",
   "project_input_budget": "string",
@@ -65,8 +67,6 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
   "turnover": "string",
   "project_id": "string",
   "team_user_id": "string",
-  "collect_type": "string",
-  "publication_timeframe": "string",
   "lead_source": "string"
 }
 ```
@@ -77,18 +77,20 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |---|---|---|---|---|
 |Authorization|header|string|true|Client API key|
 |body|body|object|false|none|
-|» firstname|body|string|true|none|
-|» lastname|body|string|true|none|
-|» birthdate|body|string|false|none|
-|» email|body|string|true|none|
-|» siret|body|string|false|none|
+|» email|body|string|true|Email address|
+|» firstname|body|string|true|First name|
+|» lastname|body|string|true|Last name|
 |» phone|body|string|true|none|
+|» collect_type|body|string|true|none|
+|» project_description|body|string|true|none|
+|» project_total_budget|body|string|true|none|
+|» publication_timeframe|body|string|true|none|
+|» birthdate|body|string|false|none|
+|» siret|body|string|false|none|
 |» post_code|body|string|false|none|
 |» city|body|string|false|none|
 |» project_name|body|string|false|none|
-|» project_description|body|string|true|none|
 |» social_link|body|string|false|none|
-|» project_total_budget|body|string|true|none|
 |» project_crowdfunding_budget|body|string|false|none|
 |» project_loan_budget|body|string|false|none|
 |» project_input_budget|body|string|false|none|
@@ -105,8 +107,6 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |» turnover|body|string|false|none|
 |» project_id|body|string|false|none|
 |» team_user_id|body|string|false|none|
-|» collect_type|body|string|true|none|
-|» publication_timeframe|body|string|true|none|
 |» lead_source|body|string|false|none|
 
 <h3 id="post__api_leads-responses">Responses</h3>
