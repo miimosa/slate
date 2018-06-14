@@ -71,7 +71,7 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |» firstname|body|string|true|First name.|
 |» lastname|body|string|true|Last name.|
 |» phone|body|string|true|Phone number.|
-|» collect_type|body|string|true|Collect type. Must be 'donation' or 'lending'.|
+|» collect_type|body|string|true|Collect type. Must be <b>donation</b> or <b>lending<\b>|
 |» project_description|body|string|true|Description of the project.|
 |» project_total_budget|body|string|true|Total budget of the project.|
 |» publication_timeframe|body|string|true|Publication timeframe. Must be 'within_month', 'next_months' or 'another_quarter'|
