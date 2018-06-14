@@ -274,18 +274,20 @@
 <p>Body parameter</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"firstname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"lastname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"siret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"collect_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"project_total_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"publication_timeframe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"siret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"post_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"project_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"social_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"project_total_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_crowdfunding_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_loan_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_input_budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
@@ -302,8 +304,6 @@
   </span><span class="s2">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"team_user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"collect_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"publication_timeframe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -333,14 +333,56 @@
 <td>none</td>
 </tr>
 <tr>
+<td>» email</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Email address</td>
+</tr>
+<tr>
 <td>» firstname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>First name</td>
+</tr>
+<tr>
+<td>» lastname</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>Last name</td>
+</tr>
+<tr>
+<td>» phone</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
 <td>none</td>
 </tr>
 <tr>
-<td>» lastname</td>
+<td>» collect_type</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» project_description</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» project_total_budget</td>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+</tr>
+<tr>
+<td>» publication_timeframe</td>
 <td>body</td>
 <td>string</td>
 <td>true</td>
@@ -354,24 +396,10 @@
 <td>none</td>
 </tr>
 <tr>
-<td>» email</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-</tr>
-<tr>
 <td>» siret</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» phone</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
 <td>none</td>
 </tr>
 <tr>
@@ -396,24 +424,10 @@
 <td>none</td>
 </tr>
 <tr>
-<td>» project_description</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-</tr>
-<tr>
 <td>» social_link</td>
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» project_total_budget</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
 <td>none</td>
 </tr>
 <tr>
@@ -526,20 +540,6 @@
 <td>body</td>
 <td>string</td>
 <td>false</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» collect_type</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
-<td>none</td>
-</tr>
-<tr>
-<td>» publication_timeframe</td>
-<td>body</td>
-<td>string</td>
-<td>true</td>
 <td>none</td>
 </tr>
 <tr>
