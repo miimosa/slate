@@ -116,7 +116,8 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|lead created|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|invalid record|None|
 
-<aside class="success">
-This operation does not require authentication
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
 </aside>
 
