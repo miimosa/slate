@@ -29,42 +29,6 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 
 > Code samples
 
-```shell
-# You can also use wget
-curl -X POST ///api/leads \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: string'
-
-```
-
-```http
-POST ///api/leads HTTP/1.1
-Host: null
-Content-Type: application/json
-
-Authorization: string
-
-```
-
-```javascript
-var headers = {
-  'Content-Type':'application/json',
-  'Authorization':'string'
-
-};
-
-$.ajax({
-  url: '///api/leads',
-  method: 'post',
-
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
-  }
-})
-
-```
-
 `POST /api/leads`
 
 *Creates a lead*
