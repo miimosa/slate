@@ -55,18 +55,8 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
   "project_loan_budget": "string",
   "project_input_budget": "string",
   "department": "string",
-  "type": "string",
   "category": "string",
-  "financial_type": "string",
-  "user_id": "string",
-  "status": "string",
-  "estimated_publication_at": "string",
-  "partner_id": "string",
-  "custom_fields": "string",
-  "category_id": "string",
   "turnover": "string",
-  "project_id": "string",
-  "team_user_id": "string",
   "lead_source": "string"
 }
 ```
@@ -77,37 +67,27 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |---|---|---|---|---|
 |Authorization|header|string|true|Client API key|
 |body|body|object|false|none|
-|» email|body|string|true|Email address|
-|» firstname|body|string|true|First name|
-|» lastname|body|string|true|Last name|
-|» phone|body|string|true|none|
-|» collect_type|body|string|true|none|
-|» project_description|body|string|true|none|
-|» project_total_budget|body|string|true|none|
-|» publication_timeframe|body|string|true|none|
-|» birthdate|body|string|false|none|
-|» siret|body|string|false|none|
-|» post_code|body|string|false|none|
-|» city|body|string|false|none|
-|» project_name|body|string|false|none|
-|» social_link|body|string|false|none|
+|» email|body|string|true|Email address.|
+|» firstname|body|string|true|First name.|
+|» lastname|body|string|true|Last name.|
+|» phone|body|string|true|Phone number.|
+|» collect_type|body|string|true|Collect type. Must be 'donation' or 'lending'.|
+|» project_description|body|string|true|Description of the project.|
+|» project_total_budget|body|string|true|Total budget of the project.|
+|» publication_timeframe|body|string|true|Publication timeframe. Must be 'within_month', 'next_months' or 'another_quarter'|
+|» birthdate|body|string|false|Birthdate. No specific format.|
+|» siret|body|string|false|Siret.|
+|» post_code|body|string|false|Zip code.|
+|» city|body|string|false|City.|
+|» project_name|body|string|false|Project name.|
+|» social_link|body|string|false|Social link like facebook, twitter and so on.|
 |» project_crowdfunding_budget|body|string|false|none|
 |» project_loan_budget|body|string|false|none|
 |» project_input_budget|body|string|false|none|
-|» department|body|string|false|none|
-|» type|body|string|false|none|
-|» category|body|string|false|none|
-|» financial_type|body|string|false|none|
-|» user_id|body|string|false|none|
-|» status|body|string|false|none|
-|» estimated_publication_at|body|string|false|none|
-|» partner_id|body|string|false|none|
-|» custom_fields|body|string|false|none|
-|» category_id|body|string|false|none|
-|» turnover|body|string|false|none|
-|» project_id|body|string|false|none|
-|» team_user_id|body|string|false|none|
-|» lead_source|body|string|false|none|
+|» department|body|string|false|Department code|
+|» category|body|string|false|Category. Must be on of the following categories: apiculture aquaculture alcool soft elevage sale sucre horticulture innovation nature lait viticulture.|
+|» turnover|body|string|false|Turnover.|
+|» lead_source|body|string|false|The source of the lead.|
 
 <h3 id="post__api_leads-responses">Responses</h3>
 
