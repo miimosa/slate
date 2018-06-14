@@ -71,10 +71,10 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |» firstname|body|string|true|First name.|
 |» lastname|body|string|true|Last name.|
 |» phone|body|string|true|Phone number.|
-|» collect_type|body|string|true|Collect type. Must be <b>donation</b> or <b>lending<\b>|
+|» collect_type|body|string|true|Collect type. Must be <b>donation</b> or <b>lending</b>.|
 |» project_description|body|string|true|Description of the project.|
 |» project_total_budget|body|string|true|Total budget of the project.|
-|» publication_timeframe|body|string|true|Publication timeframe. Must be 'within_month', 'next_months' or 'another_quarter'|
+|» publication_timeframe|body|string|true|Publication timeframe. Must be <b>within_month</b>, <b>next_months</b> or <b>another_quarter</b>.|
 |» birthdate|body|string|false|Birthdate. No specific format.|
 |» siret|body|string|false|Siret.|
 |» post_code|body|string|false|Zip code.|
@@ -85,7 +85,7 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |» project_loan_budget|body|string|false|none|
 |» project_input_budget|body|string|false|none|
 |» department|body|string|false|Department code|
-|» category|body|string|false|Category. Must be on of the following categories: apiculture aquaculture alcool soft elevage sale sucre horticulture innovation nature lait viticulture.|
+|» category|body|string|false|Category. Must be on of the following categories: <b>apiculture</b> <b>aquaculture</b> <b>alcool</b> <b>soft</b> <b>elevage</b> <b>sale</b> <b>sucre</b> <b>horticulture</b> <b>innovation</b> <b>nature</b> <b>lait</b> <b>viticulture</b>.|
 |» turnover|body|string|false|Turnover.|
 |» lead_source|body|string|false|The source of the lead.|
 
