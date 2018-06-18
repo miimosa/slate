@@ -237,6 +237,14 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#MiiMOSA-API-Projects" class="toc-h1 toc-link" data-title="projects">Projects</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get__api_projects" class="toc-h2 toc-link" data-title="get__api_projects">get__api_projects</a>
+                  </li>
+              </ul>
+          </li>
       </div>
         <ul class="toc-footer">
         </ul>
@@ -265,7 +273,36 @@
 <blockquote>
 <p>Code samples</p>
 </blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X POST ///api/leads <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: string'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: API_KEY'</span>
 
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">POST</span> <span class="nn">///api/leads</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">null</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="err">Authorization</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span><span class="p">:</span><span class="s1">'string'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
+
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'///api/leads'</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'post'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
+  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+</code></pre>
 <p><code>POST /api/leads</code></p>
 
 <p><em>Creates a lead</em></p>
@@ -491,6 +528,104 @@
 <td>400</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.1">Bad Request</a></td>
 <td>invalid record</td>
+<td>None</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
+<h1 id="MiiMOSA-API-Projects">Projects</h1>
+<h2 id='get__api_projects'>get__api_projects</h2>
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl -X GET ///api/projects <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: string'</span> <span class="se">\</span>
+  -H <span class="s1">'Authorization: API_KEY'</span>
+
+</code></pre><pre class="highlight http tab-http"><code><span class="nf">GET</span> <span class="nn">///api/projects</span> <span class="k">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="p">:</span> <span class="s">null</span>
+<span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span>
+
+<span class="err">Authorization</span><span class="p">:</span><span class="w"> </span><span class="err">string</span><span class="w">
+
+</span></code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span><span class="p">:</span><span class="s1">'application/json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span><span class="p">:</span><span class="s1">'string'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span><span class="p">:</span><span class="s1">'API_KEY'</span>
+
+<span class="p">};</span>
+
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span> <span class="s1">'///api/projects'</span><span class="p">,</span>
+  <span class="na">method</span><span class="p">:</span> <span class="s1">'get'</span><span class="p">,</span>
+
+  <span class="na">headers</span><span class="p">:</span> <span class="nx">headers</span><span class="p">,</span>
+  <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+</code></pre>
+<p><code>GET /api/projects</code></p>
+
+<p><em>List all published projects</em></p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<h3 id="get__api_projects-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>string</td>
+<td>true</td>
+<td>Client API key</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>array[object]</td>
+<td>false</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="get__api_projects-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
+<td>projects listed</td>
 <td>None</td>
 </tr>
 </tbody></table>
