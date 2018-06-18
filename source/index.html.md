@@ -29,6 +29,44 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 
 > Code samples
 
+```shell
+# You can also use wget
+curl -X POST ///api/leads \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: string' \
+  -H 'Authorization: API_KEY'
+
+```
+
+```http
+POST ///api/leads HTTP/1.1
+Host: null
+Content-Type: application/json
+
+Authorization: string
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Authorization':'string',
+  'Authorization':'API_KEY'
+
+};
+
+$.ajax({
+  url: '///api/leads',
+  method: 'post',
+
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+
+```
+
 `POST /api/leads`
 
 *Creates a lead*
@@ -95,6 +133,82 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|lead created|None|
 |400|[Bad Request](https://tools.ietf.org/html/rfc7231#section-6.5.1)|invalid record|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
+<h1 id="MiiMOSA-API-Projects">Projects</h1>
+
+## get__api_projects
+
+> Code samples
+
+```shell
+# You can also use wget
+curl -X GET ///api/projects \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: string' \
+  -H 'Authorization: API_KEY'
+
+```
+
+```http
+GET ///api/projects HTTP/1.1
+Host: null
+Content-Type: application/json
+
+Authorization: string
+
+```
+
+```javascript
+var headers = {
+  'Content-Type':'application/json',
+  'Authorization':'string',
+  'Authorization':'API_KEY'
+
+};
+
+$.ajax({
+  url: '///api/projects',
+  method: 'get',
+
+  headers: headers,
+  success: function(data) {
+    console.log(JSON.stringify(data));
+  }
+})
+
+```
+
+`GET /api/projects`
+
+*List all published projects*
+
+> Body parameter
+
+```json
+[
+  {
+    "url": "string"
+  }
+]
+```
+
+<h3 id="get__api_projects-parameters">Parameters</h3>
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|Authorization|header|string|true|Client API key|
+|body|body|array[object]|false|none|
+
+<h3 id="get__api_projects-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|projects listed|None|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
