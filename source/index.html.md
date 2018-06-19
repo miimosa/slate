@@ -203,12 +203,9 @@ xhr.send(data);
 
 |Parameter|Value|
 |---|---|
-|order|by_title|
-|order|by_state|
-|order|by_ending_desc|
-|order|by_starting_desc|
-|order|by_popularity|
-|order|by_state_priority|
+|order|populars|
+|order|in_progress|
+|order|recent|
 |category|apiculture|
 |category|alcool|
 |category|aquaculture|
