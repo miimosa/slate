@@ -240,7 +240,7 @@ apiKey
 
 ```shell
 curl --request GET \
-  --url https://api.miimosa.com/projects/string \
+  --url https://api.miimosa.com/projects/0 \
   --header 'authorization: string'
 ```
 
@@ -256,7 +256,7 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "https://api.miimosa.com/projects/string");
+xhr.open("GET", "https://api.miimosa.com/projects/0");
 xhr.setRequestHeader("authorization", "string");
 
 xhr.send(data);
@@ -270,7 +270,7 @@ xhr.send(data);
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
-|project_id|path|string|true|Id of the project|
+|project_id|path|integer|true|Id of the project|
 |Authorization|header|string|true|Client API key|
 
 <h3 id="get__projects_{project_id}-responses">Responses</h3>
