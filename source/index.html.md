@@ -18,6 +18,10 @@ headingLevel: 2
 
 MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as GET, POST, PATCH and DELETE and return appropriate HTTP response codes (2xx for success, 4xx for client errors and 5xx for server errors).<br><br>We use JSON to encode all resources</p><h1 id="pagination">Pagination</h1><p>We paginate in our headers, not in our response body. This follows the proposed <a href="http://tools.ietf.org/html/rfc5988" rel="nofollow">RFC-5988</a> standard for Web linking.</p><p>
 
+Base URLs:
+
+* <a href="https://api.miimosa.com">https://api.miimosa.com</a>
+
 # Authentication
 
 * API Key (apiKey)
@@ -25,49 +29,60 @@ MiiMOSA API strives to stick to the REST convention: we use HTTP verbs such as G
 
 <h1 id="MiiMOSA-API-Leads">Leads</h1>
 
-## post__api_leads
+## post__leads
 
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X POST ///api/leads \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: string' \
-  -H 'Authorization: API_KEY'
-
-```
-
-```http
-POST ///api/leads HTTP/1.1
-Host: null
-Content-Type: application/json
-
-Authorization: string
-
+curl --request POST \
+  --url https://api.miimosa.com/leads \
+  --header 'authorization: string' \
+  --header 'content-type: application/json' \
+  --data '{"email":"string","firstname":"string","lastname":"string","phone":"string","collect_type":"string","project_description":"string","project_total_budget":"string","publication_timeframe":"string","birthdate":"string","siret":"string","post_code":"string","city":"string","project_name":"string","social_link":"string","project_crowdfunding_budget":"string","project_loan_budget":"string","project_input_budget":"string","department":"string","category":"string","turnover":"string","lead_source":"string"}'
 ```
 
 ```javascript
-var headers = {
-  'Content-Type':'application/json',
-  'Authorization':'string',
-  'Authorization':'API_KEY'
+var data = JSON.stringify({
+  "email": "string",
+  "firstname": "string",
+  "lastname": "string",
+  "phone": "string",
+  "collect_type": "string",
+  "project_description": "string",
+  "project_total_budget": "string",
+  "publication_timeframe": "string",
+  "birthdate": "string",
+  "siret": "string",
+  "post_code": "string",
+  "city": "string",
+  "project_name": "string",
+  "social_link": "string",
+  "project_crowdfunding_budget": "string",
+  "project_loan_budget": "string",
+  "project_input_budget": "string",
+  "department": "string",
+  "category": "string",
+  "turnover": "string",
+  "lead_source": "string"
+});
 
-};
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-$.ajax({
-  url: '///api/leads',
-  method: 'post',
-
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
   }
-})
+});
 
+xhr.open("POST", "https://api.miimosa.com/leads");
+xhr.setRequestHeader("content-type", "application/json");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
 ```
 
-`POST /api/leads`
+`POST /leads`
 
 *Creates a lead*
 
@@ -99,7 +114,7 @@ $.ajax({
 }
 ```
 
-<h3 id="post__api_leads-parameters">Parameters</h3>
+<h3 id="post__leads-parameters">Parameters</h3>
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
@@ -127,7 +142,7 @@ $.ajax({
 |» turnover|body|string|false|Turnover.|
 |» lead_source|body|string|false|The source of the lead.|
 
-<h3 id="post__api_leads-responses">Responses</h3>
+<h3 id="post__leads-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -141,74 +156,132 @@ apiKey
 
 <h1 id="MiiMOSA-API-Projects">Projects</h1>
 
-## get__api_projects
+## get__projects
 
 > Code samples
 
 ```shell
-# You can also use wget
-curl -X GET ///api/projects \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: string' \
-  -H 'Authorization: API_KEY'
-
-```
-
-```http
-GET ///api/projects HTTP/1.1
-Host: null
-Content-Type: application/json
-
-Authorization: string
-
+curl --request GET \
+  --url https://api.miimosa.com/projects \
+  --header 'authorization: string'
 ```
 
 ```javascript
-var headers = {
-  'Content-Type':'application/json',
-  'Authorization':'string',
-  'Authorization':'API_KEY'
+var data = null;
 
-};
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
 
-$.ajax({
-  url: '///api/projects',
-  method: 'get',
-
-  headers: headers,
-  success: function(data) {
-    console.log(JSON.stringify(data));
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
   }
-})
+});
 
+xhr.open("GET", "https://api.miimosa.com/projects");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
 ```
 
-`GET /api/projects`
+`GET /projects`
 
 *List all published projects*
 
-> Body parameter
-
-```json
-[
-  {
-    "url": "string"
-  }
-]
-```
-
-<h3 id="get__api_projects-parameters">Parameters</h3>
+<h3 id="get__projects-parameters">Parameters</h3>
 
 |Parameter|In|Type|Required|Description|
 |---|---|---|---|---|
+|order|query|string|false|Filter projects by order type. Must be one of the order types below.|
+|category|query|string|false|Category. Must be one of the categories below.|
+|type|query|string|false|Type of collect for the project. Must be one of the types below.|
+|region|query|string|false|Find a project by its region code. You can find codes here: <a href='https://fr.wikipedia.org/wiki/Codes_g%C3%A9ographiques_de_la_France'>link</a>.|
+|keyword|query|string|false|Search a project by keyword.|
 |Authorization|header|string|true|Client API key|
-|body|body|array[object]|false|none|
 
-<h3 id="get__api_projects-responses">Responses</h3>
+#### Enumerated Values
+
+|Parameter|Value|
+|---|---|
+|order|by_title|
+|order|by_state|
+|order|by_ending_desc|
+|order|by_starting_desc|
+|order|by_popularity|
+|order|by_state_priority|
+|category|apiculture|
+|category|alcool|
+|category|aquaculture|
+|category|soft|
+|category|elevage|
+|category|sale|
+|category|sucre|
+|category|horticulture|
+|category|innovation|
+|category|nature|
+|category|lait|
+|category|viticulture|
+|type|donation|
+|type|lending|
+
+<h3 id="get__projects-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|projects listed|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
+<h1 id="MiiMOSA-API-Project">Project</h1>
+
+## get__projects_{project_id}
+
+> Code samples
+
+```shell
+curl --request GET \
+  --url https://api.miimosa.com/projects/string \
+  --header 'authorization: string'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://api.miimosa.com/projects/string");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
+```
+
+`GET /projects/{project_id}`
+
+*Retrieve a project*
+
+<h3 id="get__projects_{project_id}-parameters">Parameters</h3>
+
+|Parameter|In|Type|Required|Description|
+|---|---|---|---|---|
+|project_id|path|string|true|Id of the project|
+|Authorization|header|string|true|Client API key|
+
+<h3 id="get__projects_{project_id}-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|project retrieved|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|project not found|None|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
