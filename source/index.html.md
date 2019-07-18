@@ -12,7 +12,7 @@ headingLevel: 2
 
 ---
 
-<h1 id="MiiMOSA-API">MiiMOSA API v1</h1>
+<h1 id="miimosa-api">MiiMOSA API v1</h1>
 
 > Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.
 
@@ -27,7 +27,7 @@ Base URLs:
 * API Key (apiKey)
     - Parameter Name: **Authorization**, in: header. 
 
-<h1 id="MiiMOSA-API-Leads">Leads</h1>
+<h1 id="miimosa-api-leads">Leads</h1>
 
 ## post__leads
 
@@ -116,7 +116,7 @@ xhr.send(data);
 
 <h3 id="post__leads-parameters">Parameters</h3>
 
-|Parameter|In|Type|Required|Description|
+|Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |Authorization|header|string|true|Client API key|
 |body|body|object|false|none|
@@ -154,7 +154,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="MiiMOSA-API-Projects">Projects</h1>
+<h1 id="miimosa-api-projects">Projects</h1>
 
 ## get__projects
 
@@ -190,7 +190,7 @@ xhr.send(data);
 
 <h3 id="get__projects-parameters">Parameters</h3>
 
-|Parameter|In|Type|Required|Description|
+|Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |order|query|string|false|Filter projects by order type. Must be one of the order types below.|
 |category|query|string|false|Category. Must be one of the categories below.|
@@ -232,7 +232,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="MiiMOSA-API-Project">Project</h1>
+<h1 id="miimosa-api-project">Project</h1>
 
 ## get__projects_{project_id}
 
@@ -268,7 +268,7 @@ xhr.send(data);
 
 <h3 id="get__projects_{project_id}-parameters">Parameters</h3>
 
-|Parameter|In|Type|Required|Description|
+|Name|In|Type|Required|Description|
 |---|---|---|---|---|
 |project_id|path|integer|true|Id of the project|
 |Authorization|header|string|true|Client API key|
@@ -279,6 +279,59 @@ xhr.send(data);
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|project retrieved|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|project not found|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
+<h1 id="miimosa-api-wallet">Wallet</h1>
+
+## get__wallet
+
+> Code samples
+
+```shell
+curl --request GET \
+  --url 'https://api.miimosa.com/wallet?email=string' \
+  --header 'authorization: string'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://api.miimosa.com/wallet?email=string");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
+```
+
+`GET /wallet`
+
+*personal_wallet of user's mii preferred_account*
+
+<h3 id="get__wallet-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|email|query|string|true|Search a wallet by the user's email.|
+|Authorization|header|string|true|Client API key|
+
+<h3 id="get__wallet-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|wallet listed|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|wallet not found|None|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
