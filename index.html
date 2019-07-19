@@ -221,7 +221,7 @@
         <ul class="search-results"></ul>
       <div id="toc" class="toc-list-h1">
           <li>
-            <a href="#miimosa-api" class="toc-h1 toc-link" data-title="miimosa-api-v1">MiiMOSA API v1</a>
+            <a href="#MiiMOSA-API" class="toc-h1 toc-link" data-title="miimosa-api-v1">MiiMOSA API v1</a>
           </li>
           <li>
             <a href="#pagination" class="toc-h1 toc-link" data-title="pagination">Pagination</a>
@@ -230,7 +230,7 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="authentication">Authentication</a>
           </li>
           <li>
-            <a href="#miimosa-api-leads" class="toc-h1 toc-link" data-title="leads">Leads</a>
+            <a href="#MiiMOSA-API-Leads" class="toc-h1 toc-link" data-title="leads">Leads</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#post__leads" class="toc-h2 toc-link" data-title="post__leads">post__leads</a>
@@ -238,7 +238,7 @@
               </ul>
           </li>
           <li>
-            <a href="#miimosa-api-projects" class="toc-h1 toc-link" data-title="projects">Projects</a>
+            <a href="#MiiMOSA-API-Projects" class="toc-h1 toc-link" data-title="projects">Projects</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get__projects" class="toc-h2 toc-link" data-title="get__projects">get__projects</a>
@@ -246,18 +246,10 @@
               </ul>
           </li>
           <li>
-            <a href="#miimosa-api-project" class="toc-h1 toc-link" data-title="project">Project</a>
+            <a href="#MiiMOSA-API-Project" class="toc-h1 toc-link" data-title="project">Project</a>
               <ul class="toc-list-h2">
                   <li>
                     <a href="#get_projects-project_id" class="toc-h2 toc-link" data-title="get_-em-projects-em-project_id">get_<em>projects</em>{project_id}</a>
-                  </li>
-              </ul>
-          </li>
-          <li>
-            <a href="#miimosa-api-wallet" class="toc-h1 toc-link" data-title="wallet">Wallet</a>
-              <ul class="toc-list-h2">
-                  <li>
-                    <a href="#get__wallet" class="toc-h2 toc-link" data-title="get__wallet">get__wallet</a>
                   </li>
               </ul>
           </li>
@@ -268,7 +260,7 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="miimosa-api">MiiMOSA API v1</h1>
+        <h1 id="MiiMOSA-API">MiiMOSA API v1</h1>
 
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
@@ -290,7 +282,7 @@
 </ul></li>
 </ul>
 
-<h1 id="miimosa-api-leads">Leads</h1>
+<h1 id="MiiMOSA-API-Leads">Leads</h1>
 <h2 id='post__leads'>post__leads</h2>
 <blockquote>
 <p>Code samples</p>
@@ -374,7 +366,7 @@
 
 <table><thead>
 <tr>
-<th>Name</th>
+<th>Parameter</th>
 <th>In</th>
 <th>Type</th>
 <th>Required</th>
@@ -573,7 +565,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="miimosa-api-projects">Projects</h1>
+<h1 id="MiiMOSA-API-Projects">Projects</h1>
 <h2 id='get__projects'>get__projects</h2>
 <blockquote>
 <p>Code samples</p>
@@ -605,7 +597,7 @@ apiKey
 
 <table><thead>
 <tr>
-<th>Name</th>
+<th>Parameter</th>
 <th>In</th>
 <th>Type</th>
 <th>Required</th>
@@ -755,7 +747,7 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="miimosa-api-project">Project</h1>
+<h1 id="MiiMOSA-API-Project">Project</h1>
 <h2 id='get_projects-project_id'>get_<em>projects</em>{project_id}</h2>
 <blockquote>
 <p>Code samples</p>
@@ -787,7 +779,7 @@ apiKey
 
 <table><thead>
 <tr>
-<th>Name</th>
+<th>Parameter</th>
 <th>In</th>
 <th>Type</th>
 <th>Required</th>
@@ -830,90 +822,6 @@ apiKey
 <td>404</td>
 <td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
 <td>project not found</td>
-<td>None</td>
-</tr>
-</tbody></table>
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-apiKey
-</aside>
-
-<h1 id="miimosa-api-wallet">Wallet</h1>
-<h2 id='get__wallet'>get__wallet</h2>
-<blockquote>
-<p>Code samples</p>
-</blockquote>
-<pre class="highlight shell tab-shell"><code>curl --request GET <span class="se">\</span>
-  --url <span class="s1">'https://api.miimosa.com/wallet?email=string'</span> <span class="se">\</span>
-  --header <span class="s1">'authorization: string'</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-
-<span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">withCredentials</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"readystatechange"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">DONE</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"GET"</span><span class="p">,</span> <span class="s2">"https://api.miimosa.com/wallet?email=string"</span><span class="p">);</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"authorization"</span><span class="p">,</span> <span class="s2">"string"</span><span class="p">);</span>
-
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
-</code></pre>
-<p><code>GET /wallet</code></p>
-
-<p><em>personal_wallet of user&#39;s mii preferred_account</em></p>
-
-<h3 id="get__wallet-parameters">Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Name</th>
-<th>In</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>email</td>
-<td>query</td>
-<td>string</td>
-<td>true</td>
-<td>Search a wallet by the user&#39;s email.</td>
-</tr>
-<tr>
-<td>Authorization</td>
-<td>header</td>
-<td>string</td>
-<td>true</td>
-<td>Client API key</td>
-</tr>
-</tbody></table>
-
-<h3 id="get__wallet-responses">Responses</h3>
-
-<table><thead>
-<tr>
-<th>Status</th>
-<th>Meaning</th>
-<th>Description</th>
-<th>Schema</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.3.1">OK</a></td>
-<td>wallet listed</td>
-<td>None</td>
-</tr>
-<tr>
-<td>404</td>
-<td><a href="https://tools.ietf.org/html/rfc7231#section-6.5.4">Not Found</a></td>
-<td>wallet not found</td>
 <td>None</td>
 </tr>
 </tbody></table>
