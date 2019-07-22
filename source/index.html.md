@@ -154,6 +154,59 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
+<h1 id="miimosa-api-pledges">Pledges</h1>
+
+## get__pledges
+
+> Code samples
+
+```shell
+curl --request GET \
+  --url 'https://api.miimosa.com/pledges?email=string' \
+  --header 'authorization: string'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://api.miimosa.com/pledges?email=string");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
+```
+
+`GET /pledges`
+
+*List all valid lending pledges*
+
+<h3 id="get__pledges-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|email|query|string|true|Search a pledges by the user's email.|
+|Authorization|header|string|true|Client API key|
+
+<h3 id="get__pledges-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|pledges listed|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|email not found|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
 <h1 id="miimosa-api-projects">Projects</h1>
 
 ## get__projects
