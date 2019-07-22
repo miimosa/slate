@@ -317,7 +317,7 @@ xhr.send(data);
 
 `GET /wallet`
 
-*personal_wallet of user's mii preferred_account*
+*Retrieve a user's wallet thanks to his email*
 
 <h3 id="get__wallet-parameters">Parameters</h3>
 
@@ -330,7 +330,7 @@ xhr.send(data);
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|wallet listed|None|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|wallet retrieved|None|
 |404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|wallet not found|None|
 
 <aside class="warning">
