@@ -192,7 +192,7 @@ xhr.send(data);
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|email|query|string|true|Search a pledges by the user's email.|
+|email|query|string|true|Search pledges by the user's email.|
 |Authorization|header|string|true|Client API key|
 
 <h3 id="get__pledges-responses">Responses</h3>
