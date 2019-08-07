@@ -154,59 +154,6 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="miimosa-api-pledges">Pledges</h1>
-
-## get__pledges
-
-> Code samples
-
-```shell
-curl --request GET \
-  --url 'https://api.miimosa.com/pledges?email=string' \
-  --header 'authorization: string'
-```
-
-```javascript
-var data = null;
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === this.DONE) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("GET", "https://api.miimosa.com/pledges?email=string");
-xhr.setRequestHeader("authorization", "string");
-
-xhr.send(data);
-```
-
-`GET /pledges`
-
-*List all valid lending pledges*
-
-<h3 id="get__pledges-parameters">Parameters</h3>
-
-|Name|In|Type|Required|Description|
-|---|---|---|---|---|
-|email|query|string|true|Search pledges by the user's email.|
-|Authorization|header|string|true|Client API key|
-
-<h3 id="get__pledges-responses">Responses</h3>
-
-|Status|Meaning|Description|Schema|
-|---|---|---|---|
-|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|pledges listed|None|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|email not found|None|
-
-<aside class="warning">
-To perform this operation, you must be authenticated by means of one of the following methods:
-apiKey
-</aside>
-
 <h1 id="miimosa-api-projects">Projects</h1>
 
 ## get__projects
@@ -287,7 +234,7 @@ apiKey
 
 <h1 id="miimosa-api-project">Project</h1>
 
-## get__projects_{project_id}
+## get__projects_{id}
 
 > Code samples
 
@@ -315,18 +262,18 @@ xhr.setRequestHeader("authorization", "string");
 xhr.send(data);
 ```
 
-`GET /projects/{project_id}`
+`GET /projects/{id}`
 
 *Retrieve a project*
 
-<h3 id="get__projects_{project_id}-parameters">Parameters</h3>
+<h3 id="get__projects_{id}-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|project_id|path|integer|true|Id of the project|
+|id|path|integer|true|Id of the project|
 |Authorization|header|string|true|Client API key|
 
-<h3 id="get__projects_{project_id}-responses">Responses</h3>
+<h3 id="get__projects_{id}-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
@@ -338,15 +285,15 @@ To perform this operation, you must be authenticated by means of one of the foll
 apiKey
 </aside>
 
-<h1 id="miimosa-api-wallet">Wallet</h1>
+<h1 id="miimosa-api-pledges">Pledges</h1>
 
-## get__wallet
+## get__user_pledges
 
 > Code samples
 
 ```shell
 curl --request GET \
-  --url 'https://api.miimosa.com/wallet?email=string' \
+  --url 'https://api.miimosa.com/user/pledges?user_birthdate=string&user_email=string' \
   --header 'authorization: string'
 ```
 
@@ -362,29 +309,86 @@ xhr.addEventListener("readystatechange", function () {
   }
 });
 
-xhr.open("GET", "https://api.miimosa.com/wallet?email=string");
+xhr.open("GET", "https://api.miimosa.com/user/pledges?user_birthdate=string&user_email=string");
 xhr.setRequestHeader("authorization", "string");
 
 xhr.send(data);
 ```
 
-`GET /wallet`
+`GET /user/pledges`
 
-*Retrieve a user's wallet thanks to his email*
+*List all valid lending pledges*
 
-<h3 id="get__wallet-parameters">Parameters</h3>
+<h3 id="get__user_pledges-parameters">Parameters</h3>
 
 |Name|In|Type|Required|Description|
 |---|---|---|---|---|
-|email|query|string|true|Search a wallet by the user's email.|
+|user_email|query|string|true|Search pledges by the user's email.|
+|user_birthdate|query|string|true|Use to verify that we know the user.|
 |Authorization|header|string|true|Client API key|
 
-<h3 id="get__wallet-responses">Responses</h3>
+<h3 id="get__user_pledges-responses">Responses</h3>
+
+|Status|Meaning|Description|Schema|
+|---|---|---|---|
+|200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|pledges listed|None|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|birthdate does not match|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|email not found|None|
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+apiKey
+</aside>
+
+<h1 id="miimosa-api-wallet">Wallet</h1>
+
+## get__user_wallet
+
+> Code samples
+
+```shell
+curl --request GET \
+  --url 'https://api.miimosa.com/user/wallet?user_birthdate=string&user_email=string' \
+  --header 'authorization: string'
+```
+
+```javascript
+var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://api.miimosa.com/user/wallet?user_birthdate=string&user_email=string");
+xhr.setRequestHeader("authorization", "string");
+
+xhr.send(data);
+```
+
+`GET /user/wallet`
+
+*Retrieve a user's wallet thanks to his email*
+
+<h3 id="get__user_wallet-parameters">Parameters</h3>
+
+|Name|In|Type|Required|Description|
+|---|---|---|---|---|
+|user_email|query|string|true|Search a wallet by the user's email.|
+|user_birthdate|query|string|true|Use to verify that we know the user.|
+|Authorization|header|string|true|Client API key|
+
+<h3 id="get__user_wallet-responses">Responses</h3>
 
 |Status|Meaning|Description|Schema|
 |---|---|---|---|
 |200|[OK](https://tools.ietf.org/html/rfc7231#section-6.3.1)|wallet retrieved|None|
-|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|wallet not found|None|
+|403|[Forbidden](https://tools.ietf.org/html/rfc7231#section-6.5.3)|birthdate does not match|None|
+|404|[Not Found](https://tools.ietf.org/html/rfc7231#section-6.5.4)|no wallet found|None|
 
 <aside class="warning">
 To perform this operation, you must be authenticated by means of one of the following methods:
