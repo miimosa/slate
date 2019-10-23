@@ -294,7 +294,7 @@
 <li>API Key (apiKey)
 
 <ul>
-<li>Parameter Name: <strong>Authorization</strong>, in: header. </li>
+<li>Parameter Name: <strong>Authorization</strong>, in: header. api_key should be set in header like this =&gt; <em>Token token=the_api_key</em></li>
 </ul></li>
 </ul>
 
@@ -307,7 +307,7 @@
   --url https://api.miimosa.com/leads <span class="se">\</span>
   --header <span class="s1">'authorization: string'</span> <span class="se">\</span>
   --header <span class="s1">'content-type: application/json'</span> <span class="se">\</span>
-  --data <span class="s1">'{"email":"string","firstname":"string","lastname":"string","phone":"string","collect_type":"string","project_description":"string","project_total_budget":"string","publication_timeframe":"string","birthdate":"string","siret":"string","post_code":"string","city":"string","project_name":"string","social_link":"string","project_crowdfunding_budget":"string","project_loan_budget":"string","project_input_budget":"string","department":"string","category":"string","turnover":"string","lead_source":"string"}'</span>
+  --data <span class="s1">'{"email":"string","firstname":"string","lastname":"string","phone":"string","collect_type":"string","project_description":"string","project_total_budget":"string","publication_timeframe":"string","birthdate":"string","siret":"string","post_code":"string","city":"string","project_name":"string","social_link":"string","project_crowdfunding_budget":"string","project_loan_budget":"string","project_input_budget":"string","department":"string","category":"string","turnover":"string","lead_source":"string","campaign_id":"string"}'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
   <span class="s2">"email"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"firstname"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
@@ -329,7 +329,8 @@
   <span class="s2">"department"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"category"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
   <span class="s2">"turnover"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
-  <span class="s2">"lead_source"</span><span class="p">:</span> <span class="s2">"string"</span>
+  <span class="s2">"lead_source"</span><span class="p">:</span> <span class="s2">"string"</span><span class="p">,</span>
+  <span class="s2">"campaign_id"</span><span class="p">:</span> <span class="s2">"string"</span>
 <span class="p">});</span>
 
 <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
@@ -375,7 +376,8 @@
   </span><span class="s2">"department"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+  </span><span class="s2">"lead_source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"campaign_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="post__leads-parameters">Parameters</h3>
@@ -549,6 +551,13 @@
 <td>string</td>
 <td>false</td>
 <td>The source of the lead.</td>
+</tr>
+<tr>
+<td>» campaign_id</td>
+<td>body</td>
+<td>string</td>
+<td>false</td>
+<td>Id of the campaign linked to this lead</td>
 </tr>
 </tbody></table>
 
